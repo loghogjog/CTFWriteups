@@ -23,8 +23,7 @@ The level 1 challenge is actually just an interactive walkthrough of this `Threa
 
 After uploading a `.pdf` file and clicking on `Process Report` then `Start Simulation` the website shows a really cool 3D animation of how the report is processed.
 
-<video src="assets/Interactive_Walkthrough.mp4" controls="controls" style="max-width: 100%;">
-</video>
+
 
 Now that we have an understanding of how the air-gapped network works, lets move on to the actual challenges
 
