@@ -19,11 +19,12 @@ Now that you have an idea of what an air-gap network is, without further ado, le
 # Level 1: Interactive walkthrough of air-gapped network
 The level 1 challenge is actually just an interactive walkthrough of this `Threat Intel Report Submission Portal` website. 
 
-![Website's Index Page](./assets/Interactive_Walkthrough_Index_Page.png)
+![Website's Index Page](assets/Interactive_Walkthrough_Index_Page.png)
 
 After uploading a `.pdf` file and clicking on `Process Report` then `Start Simulation` the website shows a really cool 3D animation of how the report is processed.
 
-[Interactive Walkthrough](./assets/Interactive_Walkthrough.mp4)
+<video src="assets/Interactive_Walkthrough.mp4" controls="controls" style="max-width: 100%;">
+</video>
 
 Now that we have an understanding of how the air-gapped network works, lets move on to the actual challenges
 
@@ -63,7 +64,7 @@ Running the POC script injects the payload and generates a `.ps` (PostScript) or
 
 But unfortunately, as seen in the screenshot below, the web app rejects `.eps` files.
 
-![EPS File upload](./assets/eps_file_upload.png)
+![EPS File upload](assets/eps_file_upload.png)
 
 Trying EPS to PDF converters online all failed, but after doing some research, I found out that ghostscript has a tool `eps2pdf` which converts `.eps` files to `.pdf`.
 ```bash
@@ -124,12 +125,12 @@ Then what is this `fileid` and how do we get it?
 
 I went back to doing reconnaisance and looking at the `POST /upload` request in BurpSuite, I saw a `fileid` in the response and this is exactly the `fileid` that we are looking for!
 
-![Burpsuite Screenshot](./assets/burpsuite_screenshot.png)
+![Burpsuite Screenshot](assets/burpsuite_screenshot.png)
 
 You may be wondering how I'm so sure of that, and if thats the case, that shows that you are thinking and following closely. Good job!
 
 I know that this is the `fileid` because after the POST request to the `/upload` endpoint. The application continuously perform GET requests to `/readresult/{some_random_string_of_chars}` until it gets status code 200 OK.
-![Web App Polling Screenshot](./assets/polling_screenshot.png)
+![Web App Polling Screenshot](assets/polling_screenshot.png)
 
 Upon closer inspection, I noticed that this "random string of characters" is actually the `fileid` that is returned by the `/upload` endpoint.
 
@@ -156,7 +157,7 @@ And after uploading, we finally get the flag!
 CSIT{GH05T5_3X3CUT1NG_C0MM4ND5_1N_D4_M4CH1N3}
 ```
 
-![Level 2 Flag](./assets/level2flag.png)
+![Level 2 Flag](assets/level2flag.png)
 
 Thanks for reading! Check out part 2 where I go through the `Level 3` challenge
 
