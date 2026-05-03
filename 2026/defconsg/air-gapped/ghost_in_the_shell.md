@@ -158,7 +158,7 @@ CSIT{GH05T5_3X3CUT1NG_C0MM4ND5_1N_D4_M4CH1N3}
 
 ![Level 2 Flag](assets/level2flag.png)
 
-Thanks for reading! Check out part 2 where I go through the `Level 3` challenge
+Thanks for reading! Check out part 2 where I go through the [`Level 3`](./mimikyu's_secret.md) challenge
 
 ---
 
